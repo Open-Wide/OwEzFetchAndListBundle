@@ -18,6 +18,5 @@ class ContainerWrapper extends ContainerAware
 
     protected function setServices()
     {
-        d('iciservices 1');
     }
 }

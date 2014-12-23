@@ -1,7 +1,7 @@
 parameters:
 #search services
-    ow_ezfetchandlist.search_helper.ezfindlegacy.class: Ow\Bundle\OwEzFetchAndListBundle\Driver\SearchEzFindLegacyHelper
-    ow_ezfetchandlist.search_helper.ezsymfony.class: Ow\Bundle\OwEzFetchAndListBundle\Driver\SearchEzSymfonyHelper
+    ow_ezfetchandlist.search_helper.ezfindlegacy.class: Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver\SearchEzFindLegacyHelper
+    ow_ezfetchandlist.search_helper.ezsymfony.class: Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver\SearchEzSymfonyHelper
 
 services:
 #search services

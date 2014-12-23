@@ -1,8 +1,8 @@
 <?php
 
-namespace Ow\Bundle\OwEzFetchAndListBundle\Driver;
+namespace Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver;
 
-use Ow\Bundle\OwEzFetchAndListBundle\Traits\SearchBehaviorTrait;
+use Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Traits\SearchBehaviorTrait;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;

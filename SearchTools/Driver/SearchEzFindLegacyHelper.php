@@ -1,10 +1,10 @@
 <?php
 
-namespace Ow\Bundle\OwEzFetchAndListBundle\Driver;
+namespace Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver;
 
+use Ow\Bundle\OwEzFetchAndListBundle\Tools\MixedSeeker;
 use Ow\Bundle\OwEzFetchAndListBundle\Exception\MissingSearchParameterException;
-use Ow\Bundle\OwEzFetchAndListBundle\Traits\MixedSeeker;
-use Ow\Bundle\OwEzFetchAndListBundle\Traits\SearchBehaviorTrait;
+use Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Traits\SearchBehaviorTrait;
 use eZFunctionHandler;
 use Ow\Bundle\OwEzFetchAndListBundle\Wrapper\ContainerWrapper;
 
@@ -16,7 +16,6 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
 {
 
     use SearchBehaviorTrait;
-    use MixedSeeker;
 
     public static $RETURN_TYPE_LEGACY = 2;
 
@@ -163,11 +162,11 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
      */
     protected function checkParams()
     {
-        if (!self::findKey($this->searchParams, 'subtree_array')) {
+        if (!MixedSeeker::findKey($this->searchParams, 'subtree_array')) {
             throw new MissingSearchParameterException("The subtree_array (parentLocationId) parameter is missing");
         }
 
-        if (!self::findKey($this->searchParams, 'class_id')) {
+        if (!MixedSeeker::findKey($this->searchParams, 'class_id')) {
             throw new MissingSearchParameterException("The class_id (identifiers) parameter is missing");
         }
     }

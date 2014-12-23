@@ -1,8 +1,8 @@
 <?php
 
-namespace Ow\Bundle\OwEzFetchAndListBundle\Traits;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Tools;
 
-trait MixedSeeker
+class MixedSeeker
 {
 
     /**

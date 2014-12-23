@@ -22,7 +22,7 @@ First thing to do is to create your Controller and an action and to use the List
 namespace Acme\DemoBundle\Controller;
 
 use eZ\Bundle\EzPublishCoreBundle\Controller;
-use Ow\Bundle\OwEzFetchAndListBundle\Traits\ListBehavior;
+use Ow\Bundle\OwEzFetchAndListBundle\ListTools\Traits\ListBehavior;
 
 class ClassMoteurRechercheController extends Controller
 {
@@ -55,7 +55,7 @@ namespace Acme\DemoBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use eZ\Bundle\EzPublishCoreBundle\Controller;
-use Ow\Bundle\OwEzFetchAndListBundle\Traits\ListBehavior;
+use Ow\Bundle\OwEzFetchAndListBundle\ListTools\Traits\ListBehavior;
 
 class ClassMoteurRechercheController extends Controller
 {
@@ -100,7 +100,7 @@ class ClassMoteurRechercheController extends Controller
             'sort_by' => array('relevance' => 'desc'),
             'parentLocationId' => $this->configParams['parentLocationId'],
             'identifiers' => $this->configParams['identifiers'],
-            'returnType' => Ow\Bundle\OwEzFetchAndListBundle\Driver\SearchEzFindLegacyHelper::$RETURN_TYPE_CONTENT,
+            'returnType' => Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver\SearchEzFindLegacyHelper::$RETURN_TYPE_CONTENT,
         );
 
         return $searchParams;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ow\Bundle\OwEzFetchAndListBundle\Traits;
+namespace Ow\Bundle\OwEzFetchAndListBundle\ListTools\Traits;
 
 use Ow\Bundle\OwEzFetchAndListBundle\Exception\NoSearchServiceInstanciedException;
 
