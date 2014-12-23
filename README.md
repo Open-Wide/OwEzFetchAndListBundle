@@ -1,5 +1,4 @@
-
-Fetch and List Helper for EzPublish 5
+Fetch and List Bundle for EzPublish 5
 =====================================
 
 Implementation
@@ -7,12 +6,12 @@ Implementation
 
 ## Usage ##
 
-You can use the tools of this Helper in many ways, first, you have to know what you need it for.
+You can use the tools of this bundle in many ways, first, you have to know what you need it for.
 
 ### What do you need ? ###
 
-If you just want to fetch an item, a group of items, you can use all the availables search service of this helper.
-However, if you need to implement an interface where you fetch and list items (and even paginate them), you can use some tools provided in this Helper to get there easily !
+If you just want to fetch an item, a group of items, you can use all the availables search service of this bundle.
+However, if you need to implement an interface where you fetch and list items (and even paginate them), you can use some tools provided in this bundle to get there easily !
 
 ### You need to implement a complete Fetch an search interface ###
 
@@ -23,7 +22,7 @@ First thing to do is to create your Controller and an action and to use the List
 namespace Acme\DemoBundle\Controller;
 
 use eZ\Bundle\EzPublishCoreBundle\Controller;
-use Path\To\Helper\FetchAndList\Traits\ListBehavior;
+use Ow\Bundle\OwEzFetchAndListBundle\Traits\ListBehavior;
 
 class ClassMoteurRechercheController extends Controller
 {
@@ -56,7 +55,7 @@ namespace Acme\DemoBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use eZ\Bundle\EzPublishCoreBundle\Controller;
-use Path\To\Helper\FetchAndList\Traits\ListBehavior;
+use Ow\Bundle\OwEzFetchAndListBundle\Traits\ListBehavior;
 
 class ClassMoteurRechercheController extends Controller
 {
@@ -68,7 +67,7 @@ class ClassMoteurRechercheController extends Controller
      */
     public function indexAction()
     {
-        $this->searchService = $this->get('acme_demobundle.search_ezfindlegacy_helper');
+        $this->searchService = $this->get('ow_ezfetchandlist.search_ezfindlegacy_helper');
         $this->fetch();
         
         return array(
@@ -101,7 +100,7 @@ class ClassMoteurRechercheController extends Controller
             'sort_by' => array('relevance' => 'desc'),
             'parentLocationId' => $this->configParams['parentLocationId'],
             'identifiers' => $this->configParams['identifiers'],
-            'returnType' => SearchEzFindLegacyHelper::$RETURN_TYPE_CONTENT,
+            'returnType' => Ow\Bundle\OwEzFetchAndListBundle\Driver\SearchEzFindLegacyHelper::$RETURN_TYPE_CONTENT,
         );
 
         return $searchParams;
@@ -126,7 +125,7 @@ In the previous exemple, we just used the fetch function. Let's see all the func
 here is an exemple to call in a service container :
 
 ```php
-$searchService = $this->get('acme_demobundle.search_ezsymfony_helper');
+$searchService = $this->get('ow_ezfetchandlist.search_ezsymfony_helper');
 $searchService->search(array(
     'sortClauses' => array( $sortClauseAuto ),
     'filters' => array(
