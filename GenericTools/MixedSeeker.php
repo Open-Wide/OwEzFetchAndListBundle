@@ -1,6 +1,6 @@
 <?php
 
-namespace Ow\Bundle\OwEzFetchAndListBundle\Tools;
+namespace Ow\Bundle\OwEzFetchAndListBundle\GenericTools;
 
 class MixedSeeker
 {

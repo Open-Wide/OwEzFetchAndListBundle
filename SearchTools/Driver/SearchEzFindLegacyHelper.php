@@ -2,7 +2,7 @@
 
 namespace Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver;
 
-use Ow\Bundle\OwEzFetchAndListBundle\Tools\MixedSeeker;
+use Ow\Bundle\OwEzFetchAndListBundle\GenericTools\MixedSeeker;
 use Ow\Bundle\OwEzFetchAndListBundle\Exception\MissingSearchParameterException;
 use Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Traits\SearchBehaviorTrait;
 use eZFunctionHandler;
