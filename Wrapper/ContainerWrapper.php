@@ -1,6 +1,6 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Wrapper;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Wrapper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\DependencyInjection\ContainerInterface;

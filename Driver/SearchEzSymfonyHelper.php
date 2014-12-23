@@ -1,12 +1,12 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Driver;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Driver;
 
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Traits\SearchBehaviorTrait;
+use Ow\Bundle\OwEzFetchAndListBundle\Traits\SearchBehaviorTrait;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Wrapper\ContainerWrapper;
+use Ow\Bundle\OwEzFetchAndListBundle\Wrapper\ContainerWrapper;
 
 class SearchEzSymfonyHelper extends ContainerWrapper
 {

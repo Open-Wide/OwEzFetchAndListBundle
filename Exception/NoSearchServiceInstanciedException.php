@@ -1,6 +1,6 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Exception;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Exception;
 
 class NoSearchServiceInstanciedException extends \Exception
 {

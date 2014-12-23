@@ -1,16 +1,16 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Driver;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Driver;
 
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Exception\MissingSearchParameterException;
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Traits\MixedSeeker;
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Traits\SearchBehaviorTrait;
+use Ow\Bundle\OwEzFetchAndListBundle\Exception\MissingSearchParameterException;
+use Ow\Bundle\OwEzFetchAndListBundle\Traits\MixedSeeker;
+use Ow\Bundle\OwEzFetchAndListBundle\Traits\SearchBehaviorTrait;
 use eZFunctionHandler;
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Wrapper\ContainerWrapper;
+use Ow\Bundle\OwEzFetchAndListBundle\Wrapper\ContainerWrapper;
 
 /**
  * Class SearchEzFindLegacyHelper
- * @package Ow\Bundle\MindefBundle\Helper\FetchAndList\Driver
+ * @package Ow\Bundle\OwEzFetchAndListBundle\Driver
  */
 class SearchEzFindLegacyHelper extends ContainerWrapper
 {
@@ -188,8 +188,8 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
     }
 
     /**
-     * @param  null|\Ow\Bundle\MindefBundle\Helper\FetchAndList\Driver\SearchEzFindHelper $searchService
-     * @param  bool                                                                 $addNumbers
+     * @param $facetConfig
+     * @param bool $addNumbers
      * @return array
      */
     public function getResultFacets($facetConfig, $addNumbers = true)

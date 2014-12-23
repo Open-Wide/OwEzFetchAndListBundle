@@ -1,6 +1,6 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Traits;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Traits;
 
 trait SearchBehaviorTrait
 {

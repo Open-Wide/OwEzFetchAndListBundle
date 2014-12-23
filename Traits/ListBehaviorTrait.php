@@ -1,8 +1,8 @@
 <?php
 
-namespace Ow\Bundle\MindefBundle\Helper\FetchAndList\Traits;
+namespace Ow\Bundle\OwEzFetchAndListBundle\Traits;
 
-use Ow\Bundle\MindefBundle\Helper\FetchAndList\Exception\NoSearchServiceInstanciedException;
+use Ow\Bundle\OwEzFetchAndListBundle\Exception\NoSearchServiceInstanciedException;
 
 trait ListBehaviorTrait
 {
