@@ -162,10 +162,6 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
      */
     protected function checkParams()
     {
-        if (!MixedSeeker::findKey($this->searchParams, 'subtree_array')) {
-            throw new MissingSearchParameterException("The subtree_array (parentLocationId) parameter is missing");
-        }
-
         if (!MixedSeeker::findKey($this->searchParams, 'class_id')) {
             throw new MissingSearchParameterException("The class_id (identifiers) parameter is missing");
         }
