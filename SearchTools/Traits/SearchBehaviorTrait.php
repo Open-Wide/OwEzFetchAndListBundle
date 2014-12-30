@@ -45,14 +45,10 @@ trait SearchBehaviorTrait
     }
 
     /**
-     * @return array|bool
+     * @return array
      */
     public function getItems ()
     {
-        if (!$this->searchInitied) {
-            return false;
-        }
-
         return $this->items;
     }
 
