@@ -141,7 +141,12 @@ trait ListBehaviorTrait
         $getUrlArgsMethod = method_exists($query, $this->getUrlArgsMethod) ? $this->getUrlArgsMethod : 'get';
 
         foreach ($this->getAvailableUrlParams() as $valName => $props) {
-            $searchParams[$valName] = $this->getRequest()->query->{$getUrlArgsMethod}($valName, (isset($props['defaultValue']) ? $props['defaultValue'] : false));
+            if (!array_key_exists($valName, $this->searchParams) || empty($this->searchParams[$valName])) {
+                $searchParams[$valName] = $this->getRequest()->query->{$getUrlArgsMethod}($valName, (isset($props['defaultValue']) ? $props['defaultValue'] : false));
+            } else {
+                $searchParams[$valName] = $this->searchParams[$valName];
+            }
+
 
             if ($getUrlArgsMethod == 'get') {
                 if (!is_array($searchParams[$valName])) {
