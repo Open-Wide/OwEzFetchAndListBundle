@@ -226,4 +226,19 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
         );
     }
 
+    /**
+     * Getting the spellcheck collation
+     *
+     * @return mixed|string
+     */
+    public function getResultSpellcheckCollation()
+    {
+        $collation = '';
+        if (isset($this->searchExtras) && is_object($this->searchExtras)) {
+            $collation = $this->searchExtras->attribute('spellcheck_collation');
+        }
+
+        return $collation;
+    }
+
 }
