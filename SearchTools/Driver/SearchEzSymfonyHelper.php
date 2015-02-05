@@ -2,6 +2,7 @@
 
 namespace Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Driver;
 
+use eZ\Publish\API\Repository\Values\Content\LocationQuery;
 use Ow\Bundle\OwEzFetchAndListBundle\SearchTools\Traits\SearchBehaviorTrait;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
@@ -36,13 +37,24 @@ class SearchEzSymfonyHelper extends ContainerWrapper
     public function search($params = array())
     {
         $this->searchParams = $params;
-        $this->query = new Query();
         $this->setDefaultSearchParams();
         $this->normalizeSearchParams();
+
+        switch ($this->searchParams['searchType']) {
+            case self::$RETURN_TYPE_CONTENT :
+                $query = new Query();
+                break;
+            case self::$RETURN_TYPE_LOCATION :
+                $query = new LocationQuery();
+                break;
+        }
+
+        $this->query = $query;
 
         // filters
         if (isset($this->searchParams['filters'])) {
             $filters = $this->getFilters($this->searchParams['filters']);
+            $filters = array_filter($filters);
             $this->query->filter = new Criterion\LogicalAnd($filters);;
         }
 
