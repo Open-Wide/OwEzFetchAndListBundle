@@ -69,10 +69,9 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
         }
 
         $legacyKernelClosure = $this->legacyKernelClosure;
-        $params = $this->searchParams;
 
         return $legacyKernelClosure()->runCallback(
-            function () use ($params, $action) {
+            function () use ($action) {
                 return eZFunctionHandler::execute(
                     'ezfind', $action, $this->searchParams
                 );
