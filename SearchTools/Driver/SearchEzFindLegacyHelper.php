@@ -198,7 +198,7 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
     }
 
     /**
-     * Format a value for the searhc process
+     * Format a value for the search process
      *
      * @param $value
      * @return string
