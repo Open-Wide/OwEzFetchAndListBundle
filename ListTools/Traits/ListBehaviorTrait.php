@@ -159,6 +159,9 @@ trait ListBehaviorTrait
                     case 'int' :
                         $searchParams[$valName] = intval($searchParams[$valName]);
                         break;
+                    case 'boolean' :
+                        $searchParams[$valName] = boolval($searchParams[$valName]);
+                        break;
                 }
             }
         }
