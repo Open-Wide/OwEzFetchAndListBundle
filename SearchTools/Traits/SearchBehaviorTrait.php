@@ -7,6 +7,10 @@ trait SearchBehaviorTrait
     public static $RETURN_TYPE_CONTENT = 0;
     public static $RETURN_TYPE_LOCATION = 1;
 
+    public static $OPERATOR_SIMPLE = 0;
+    public static $OPERATOR_AND = 1;
+    public static $OPERATOR_OR = 2;
+
     /**
      * @var bool
      */
