@@ -170,15 +170,42 @@ class SearchEzFindLegacyHelper extends ContainerWrapper
      * @param $field
      * @param $value
      * @param bool $formatValue
+     * @param bool $operator
      * @return string
      */
-    public function normalizeSolrSearchValue($field, $value, $formatValue = true)
+    public function normalizeSolrSearchValue($field, $value, $formatValue = true, $operator = false)
     {
-        if ($formatValue) {
-            $value = '"'.$value.'"';
+        switch ($operator) {
+            case self::$OPERATOR_OR:
+                if (is_array($value)) {
+                    $value = '(' . implode(' || ', array_map(function($item, $formatValue) {
+                            if ($formatValue) {
+                                $item = $this->formatValue($item);
+                            }
+                            return $item;
+                        }, $value)) . ')';
+                }
+                break;
+            case self::$OPERATOR_SIMPLE:
+            default:
+                if ($formatValue) {
+                    $value = '"'.$value.'"';
+                }
+                break;
         }
 
         return $field.':'.$value;
+    }
+
+    /**
+     * Format a value for the searhc process
+     *
+     * @param $value
+     * @return string
+     */
+    public function formatValue($value)
+    {
+        return '"'. $value .'"';
     }
 
     /**
