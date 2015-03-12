@@ -160,7 +160,7 @@ trait ListBehaviorTrait
                         $searchParams[$valName] = intval($searchParams[$valName]);
                         break;
                     case 'boolean' :
-                        $searchParams[$valName] = boolval($searchParams[$valName]);
+                        $searchParams[$valName] = filter_var($searchParams[$valName], FILTER_VALIDATE_BOOLEAN);
                         break;
                 }
             }
